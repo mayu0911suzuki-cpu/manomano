@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+.contact__content {
+    display: flex;
+    width: 100%;
+    padding: 120px 0 30px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 37px;  
+}
+
+.contactpic {
+    width: 90%;  
+    animation: sway 5s ease-in-out infinite;
+}
+
+.contactpic:hover {
+    animation: pyon 0.6s ease-in-out;
+}
+
+@keyframes pyon {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+} 
+
+.contact__text {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 4.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addressbox {
+    display: flex;
+    width: 62.8%;
+    padding: 25px 10.5% 27px 10.5%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #000;
+    text-decoration: none;
+}
+
+.addresstext {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 3.8vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addressbox {
+    transition: 0.3s;
+}
+
+.addressbox:hover {
+    background-color: #FF6D01;
+    border-color: #FF6D01;
+}
+
+.addressbox:hover .addresstext {
+    color: #FFF;
+}
+
+/* PC版 */
+@media screen and (min-width: 769px) {
+    .contact__content {
+    display: flex;
+    width: 100%;
+    padding: 30px 0 100px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 37px;
+}
+
+.contactpic {
+    width: 24.3%;   
+}
+
+.contact__text {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.SPbr {
+    display: none;
+}
+
+.addressbox {
+    display: flex;
+    width: 17%;
+    padding: 25px 1.8% 27px 1.8%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #000;
+    text-decoration: none;
+}
+
+.addresstext {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addressbox {
+    transition: 0.3s;
+}
+
+.addressbox:hover {
+    background-color: #FF6D01;
+    border-color: #FF6D01;
+}
+
+.addressbox:hover .addresstext {
+    color: #FFF;
+}
+}

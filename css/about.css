@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+.about__content {
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 98px;
+}
+
+.aboutpic {
+    width: 57.6%;
+}
+
+.about__text {
+    display: flex;
+    padding: 0 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+    align-self: stretch;
+}
+
+.about__name {
+    color: #000;
+    text-align: center;
+    font-family: Jost;
+    font-size: 5.1vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.about__profile {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 3.3vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.PCbr {
+    display: none;
+}
+
+.about__img {
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__imgitem {
+    width: 17%;
+}
+
+.about__imgitem5 {
+    width: 17%;
+    animation: sway 5s ease-in-out infinite;
+}
+
+.about__imgitem5:hover {
+    animation: pyon 0.6s ease-in-out;
+}
+
+@keyframes pyon {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+} 
+
+/* PC版 */
+@media screen and (min-width: 769px) {
+.about__content {
+    display: flex;
+    width: 100%;
+    padding: 70px 0 100px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 39px;
+}
+
+.aboutpic {
+    width: 21.1%;
+
+}
+
+.about__name {
+    color: #000;
+    text-align: center;
+    font-family: Jost;
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.about__profile {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New";
+    font-size: 1.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.PCbr {
+    display: block;
+}
+
+.about__img {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    padding: 0;
+}
+
+.about__imgitem {
+    width: 9.3%;
+}
+
+.about__imgitem5 {
+    width: 9.3%;
+}
+}

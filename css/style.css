@@ -1,0 +1,754 @@
+@charset "utf-8";
+
+/* common */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: #000000;
+    background-color: #FFFFFF;
+    line-height: 1.8;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ======================
+   loading画面
+====================== */
+
+#loading {
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s;
+}
+
+/* loading終了後 */
+#loading.fadeout {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 画像を重ねる */
+.loading__imagesSP {
+    position: relative;
+    width: 390px;
+    height: auto;
+}
+
+.loading__imagesPC {
+    display: none;
+}
+
+/* 画像共通 */
+.loading__img {
+    position: absolute;
+    width: 390px;
+    height: auto;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+}
+
+/* 画像A */
+.loading__img--1 {
+    animation: imageChange1 1.5s infinite;
+}
+
+/* 画像B */
+.loading__img--2 {
+    animation: imageChange2 1.5s infinite;
+}
+
+/* ======================
+   アニメーション
+====================== */
+
+/* Aの表示 */
+@keyframes imageChange1 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Bの表示 */
+@keyframes imageChange2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* PC版　header */
+@media screen and (min-width: 769px) {
+    .loading__imagesPC {
+    display: block;
+    position: relative;
+    width: 880px;
+    height: auto;
+}
+
+    .loading__imagesSP {
+        display: none;
+    }
+
+    .loading__img {
+    position: absolute;
+    width: 1440px;
+    height: auto;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+}
+}
+
+/* header */
+
+.headerPC {
+    display: none;
+}
+
+.FVpic-PC {
+    display: none;
+}
+
+.headerSP {
+    display: flex;
+    padding: 15px 6%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: "Nunito Sans";
+    font-size: 8.21vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* nav初期表示 */
+.nav {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+}
+
+.nav__header {
+    width: 100%;
+    display: flex;
+    padding: 4.6% 5%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav__btn {
+    width: 10%;
+}
+
+.nav__list {
+    display: flex;
+    width: 100%;
+    padding: 12.8% 0 0 11.5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.nav__item {
+    font-family: "Nunito Sans";
+    font-size: 6.15vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.3s;
+}
+
+.nav__item3 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Nunito Sans";
+    font-size: 6.15vw;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav__item3 a:hover{
+    color: #FF6D01;
+}
+
+.nav__item a:hover {
+    color: #FF6D01;
+}
+
+.linc {
+    width: 4.1vw;
+    height: auto;
+}
+
+.nav.active {
+    transform: translateX(0);
+}
+
+.header__btn {
+    width: 9.4%;
+    height: 7.6%;
+    flex-shrink: 0;
+}
+
+.mainImg__sp {
+    display: block;
+    width: 100%;
+}
+
+.fv {
+    position: relative;
+}
+
+.mendakoSP {
+    position: absolute;
+    width: calc(275 / 390 * 100vw);
+    right: 0;
+    bottom: -42px;
+    animation: mendakoSP 2s infinite ease-in-out;
+}
+
+@keyframes mendakoSP {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* PC版　header */
+@media screen and (min-width: 769px) {
+.headerSP {
+    display: none;
+}
+
+.fv {
+    display: none;
+}
+
+.FVpic-PC {
+    display: block;
+    width: 100%;
+    align-self: stretch;
+}
+
+.headerPC {
+    display: block;
+}
+
+.header-top {
+    display: flex;
+    padding: 50px 75px 20px 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.title {
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.3s;
+}
+
+.title a:hover {
+    color: #FF6D01;
+}
+
+.mendako {
+    width: 15vw;
+    aspect-ratio: 171/167;
+    animation: mendako 2s infinite ease-in-out;
+}
+
+@keyframes mendako {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.menu-PC {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 37px;
+}
+
+.menutextPC {
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.5s;
+}
+
+.menutextPC a:hover {
+    color: #FF6D01;
+}
+
+.shop {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.linc{
+    width: 18px;
+    height: 18px;
+}
+}
+/* main */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 30px 30px;
+}
+
+.img1 {
+    order: 1;
+}
+.img2 {
+    order: 2;
+}
+.img3 {
+    order: 3;
+}
+.img4 {
+    order: 5;
+}
+.img5 {
+    order: 4;
+}
+.img6 {
+    order: 8;
+}
+.img7 {
+    order: 6;
+}
+.img8 {
+    order: 7;
+}
+.img9 {
+    order: 9;
+}
+.img10 {
+    order: 11;
+}
+.img11 {
+    order: 12;
+}
+.img12 {
+    order: 10;
+}
+.img13 {
+    order: 14;
+}
+.img14 {
+    order: 13;
+}
+.img15 {
+    order: 15;
+}
+.img16 {
+    order: 16;
+}
+.img17 {
+    order: 17;
+}
+.img18 {
+    order: 18;
+}
+.img19 {
+    order: 20;
+}
+.img20 {
+    order: 19;
+}
+
+.main-top {
+    display: flex;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    }
+
+/* PC版　main */
+@media screen and (min-width: 769px) {
+    .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 3.4%;
+    gap: 2.8vw;
+    }
+
+    .img1 {
+        order: 1;
+    }
+    .img2 {
+        order: 2;
+    }
+    .img3 {
+        order: 3;
+    }
+    .img4 {
+        order: 4;
+    }
+    .img5 {
+        order: 5;
+    }
+    .img6 {
+        order: 6;
+    }
+    .img7 {
+        order: 7;
+    }
+    .img8 {
+        order: 8;
+    }
+    .img9 {
+        order: 9;
+    }
+    .img10 {
+        order: 10;
+    }
+    .img11 {
+        order: 11;
+    }
+    .img12 {
+        order: 12;
+    }
+    .img13 {
+        order: 13;
+    }
+    .img14 {
+        order: 14;
+    }
+    .img15 {
+        order: 15;
+    }
+    .img16 {
+        order: 16;
+    }
+    .img17 {
+        order: 17;
+    }
+    .img18 {
+        order: 18;
+    }
+    .img19 {
+        order: 19;
+    }
+    .img20 {
+        order: 20;
+    }
+}
+
+/* モーダルウィンドウについての設定　PC/SP共通 */
+/* 開く画像 */
+.open-modal img {
+    width: 300px;
+    cursor: pointer;
+    animation: sway 5s ease-in-out infinite;
+}
+
+.open-modal img:hover {
+    animation: pyon 0.6s ease-in-out;
+}
+
+@keyframes pyon {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* モーダル全体 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+}
+
+/* 背景 */
+.modal-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+/* モーダル本体 */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: none;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 閉じるボタン */
+.close-btn {
+    position: absolute;
+    width: 14px;
+    top: 3px;
+    right: 6px;
+}
+
+/* メイン画像 */
+.slider img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* サムネイル */
+.thumbnail-slider {
+    margin-top: 20px;
+}
+
+.thumbnail-slider img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* slickの余白調整 */
+.thumbnail-slider .slick-slide {
+    padding: 0 5px;
+}
+
+/* PC版モーダルウィンドウ */
+@media screen and (min-width: 769px) {
+    .modal-content {
+        width: min(45vw, 500px);
+        position: absolute;
+        max-height: 90vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 30px;
+        box-sizing: border-box;
+        z-index: 2;
+        overflow: scroll;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .modal-content {
+        width: min(45vw, 800px);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    width: 20px;
+    top: 8px;
+    right: 12px;
+}
+
+/* 開く画像 */
+    .open-modal img {
+    width: 600px;
+    cursor: pointer;
+}
+
+/* footer */
+
+.footer-PC {
+    display: none;
+}
+
+.footer-SP {
+    display: flex;
+    width: 100%;
+    padding: 100px 0 30px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+.SNS {
+    display: flex;
+    width: 31.5%;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.X {
+    font-family: "Nunito Sans";
+    font-size: 8.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.mail {
+    height: 7.18vw;
+    flex-shrink: 0;
+}
+
+.copy {
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 5.13vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.X a:hover {
+    color: #FF6D01;
+}
+
+.mailicon {
+    transition: color 0.3s;
+}
+
+.mailicon a:hover {
+    content: url("../images/mailhover.png");
+}
+
+/* PC版footer */
+@media screen and (min-width: 769px) {
+
+.footer-SP {
+    display: none;
+}
+
+.footer-PC {
+    display: flex;
+    padding: 130px 42.8% 100px 3.4%;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.copy {
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 1.22vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.SNS {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 0 0 4.16%;
+}
+
+.X {
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.3s;
+}
+
+.X a:hover {
+    color: #FF6D01;
+}
+
+.mail {
+    width: 1.9vw;
+    flex-shrink: 0;
+    aspect-ratio: 14/11;
+}
+
+.mailicon {
+    transition: color 0.3s;
+}
+
+.mailicon a:hover {
+    content: url("../images/mailhover.png");
+}
+
+}
+
+ファビコン作り
